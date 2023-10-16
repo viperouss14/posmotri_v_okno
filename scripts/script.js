@@ -159,7 +159,7 @@ function appendCards({ baseUrl, dataArray, cardTmp, container }) {
   console.log('Сгенерировал карточки');
 }
 
-// Устанавливет внужное видео в контейнер ✅
+// Устанавливет нужное видео в контейнер ✅
 function setVideo({ baseUrl, video, videoUrl, posterUrl }) {
   video.setAttribute('src', `${baseUrl}${videoUrl}`);
   video.setAttribute('poster', `${baseUrl}${posterUrl}`);

@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -35,4 +38,281 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.content {
+  inline-size: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result__video-container {
+  position: relative;
+  min-inline-size: 711px;
+  max-block-size: 386px;
+}
+
+.result__video {
+  object-fit: cover;
+  min-inline-size: 711px;
+  max-block-size: 386px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-block-size: 54px;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-block-end: 5px;
+}
+
+.search-form__label {
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__label-text {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal; /*? зачем задавать класс для текста, который мы прячем*/
+}
+
+.search-form__checkbox-list .search-form__label:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.search-form__textfield {
+  min-inline-size: 225px;
+  color: rgba(255, 255, 255, 0.70);
+  font-family: 'Fira Sans Condensed';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: transparent;
+  border: none;
+  border-block-start: 1px solid #fff;
+  border-block-end: 1px solid #fff;
+}
+
+.search-form__textfield:active {
+  outline: 1px solid #fff;
+  outline-offset: 0;
+  border: none;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  border: 1px solid #FFF;
+  padding: 1px;
+}
+
+.search-form__checkbox {
+  appearance: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  block-size: 19px;
+  inline-size: 19px;
+  margin-block-end: 7px;
+}
+
+.search-form__pseudo-checkbox::before {
+  content: "";
+  position: absolute;
+  inline-size: 19px;
+  block-size: 19px;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+.search-form__checkbox:checked ~ .search-form__pseudo-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  inline-size: 15px;
+  block-size: 15px;
+  background-color: #FFF;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid #FFF;
+  background-color: transparent;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Fira Sans Condensed';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  min-block-size: 34px;
+}
+
+.button:active {
+  background: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.button:focus {
+  outline: none;
+  text-decoration: none; /*чтобы при нажатии на кнопку пропадало подчеркивание*/
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  min-inline-size: 194px;
+}
+
+.content__details {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.content__details > :first-child {
+  margin-block-end: 26px;
+}
+
+.title {
+  font-family: Oswald;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-block-size: 300px;
+  overflow: auto;
+}
+
+.content__list-item:not(:last-child) {
+  margin-block-end: 30px;
+}
+
+.content__card-link {
+  display: block;
+  margin: 2px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__card-link:active {
+  background: #545050; /*? разобраться какой класс используем */
+}
+
+.content__card-link_current {
+  background: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.content__list-item:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 30px */
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.2px; /* 90% */
+}
+
+.content__video-card-thumbnail {
+  max-block-size: 103px;
+  max-inline-size: 194px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.more-button {
+  inline-size: 100%;
 }
