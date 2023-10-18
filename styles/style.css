@@ -66,20 +66,20 @@ ol {
 
 .result__video-container {
   position: relative;
-  min-inline-size: 711px;
-  max-block-size: 386px;
+  inline-size: 711px;
+  block-size: 386px;
 }
 
 .result__video {
   object-fit: cover;
-  min-inline-size: 711px;
-  max-block-size: 386px;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .search-form {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   min-block-size: 54px;
 }
 
@@ -109,6 +109,11 @@ ol {
   line-height: normal; /*? зачем задавать класс для текста, который мы прячем*/
 }
 
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
 .search-form__checkbox-list .search-form__label:hover {
   text-decoration: underline;
   text-underline-position: under;
@@ -116,7 +121,8 @@ ol {
 
 .search-form__textfield {
   min-inline-size: 225px;
-  color: rgba(255, 255, 255, 0.70);
+  block-size: 27px;
+  color: rgba(255 255 255 / 0.7);
   font-family: 'Fira Sans Condensed';
   font-size: 18px;
   font-style: normal;
@@ -129,18 +135,11 @@ ol {
 }
 
 .search-form__textfield:active {
-  outline: 1px solid #fff;
-  outline-offset: 0;
   border: none;
 }
 
 .search-form__textfield:focus {
   outline: none;
-}
-
-.search-form__label:has(:focus-visible) {
-  border: 1px solid #FFF;
-  padding: 1px;
 }
 
 .search-form__checkbox {
@@ -150,17 +149,17 @@ ol {
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
+  block-size: 22px;
 }
 
 .search-form__pseudo-checkbox {
   position: relative;
   block-size: 19px;
   inline-size: 19px;
-  margin-block-end: 7px;
 }
 
 .search-form__pseudo-checkbox::before {
-  content: "";
+  content: '';
   position: absolute;
   inline-size: 19px;
   block-size: 19px;
@@ -169,28 +168,29 @@ ol {
 }
 
 .search-form__checkbox:checked ~ .search-form__pseudo-checkbox::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   inline-size: 15px;
   block-size: 15px;
-  background-color: #FFF;
+  background-color: #fff;
   transform: translate(-50%, -50%);
 }
 
 .button {
   cursor: pointer;
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   background-color: transparent;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: 'Fira Sans Condensed';
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  min-block-size: 34px;
+  block-size: 34px;
+  align-self: flex-end;
 }
 
 .button:active {
@@ -242,8 +242,21 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  max-block-size: 300px;
+  block-size: 300px;
   overflow: auto;
+}
+
+.content__list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.content__list::-webkit-scrollbar-track {
+  background: #545050;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 20px;
 }
 
 .content__list-item:not(:last-child) {
@@ -258,16 +271,16 @@ ol {
 }
 
 .content__card-link:active {
-  background: #545050; /*? разобраться какой класс используем */
-}
-
-.content__card-link_current {
   background: #545050;
 }
 
+.content__card-link_current {
+  background: #545050; /* при загрузке страницы первая карточка сразу выделена фоном */
+}
+
 .content__video-card {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 195px auto;
 }
 
 .content__video-card-description-container {
@@ -279,7 +292,6 @@ ol {
 
 .content__list-item:hover {
   text-decoration: underline;
-  text-underline-position: under;
 }
 
 .content__card-link:focus {
@@ -297,6 +309,9 @@ ol {
   font-weight: 700;
   line-height: 100%; /* 30px */
   text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -307,8 +322,8 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  max-block-size: 103px;
-  max-inline-size: 194px;
+  block-size: 103px;
+  inline-size: 194px;
   object-fit: cover;
   object-position: center;
 }
