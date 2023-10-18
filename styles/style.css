@@ -153,14 +153,15 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   block-size: 19px;
   inline-size: 19px;
 }
 
 .search-form__pseudo-checkbox::before {
   content: '';
-  position: absolute;
   inline-size: 19px;
   block-size: 19px;
   border: 1px solid white;
@@ -169,13 +170,9 @@ ol {
 
 .search-form__checkbox:checked ~ .search-form__pseudo-checkbox::after {
   content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
   inline-size: 15px;
   block-size: 15px;
   background-color: #fff;
-  transform: translate(-50%, -50%);
 }
 
 .button {
@@ -208,8 +205,7 @@ ol {
 }
 
 .button:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
+  outline: double;
 }
 
 .search-form__submit-button {
