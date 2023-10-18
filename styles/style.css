@@ -100,6 +100,7 @@ ol {
   gap: 5px;
   width: fit-content;
   cursor: pointer;
+  align-items: center;
 }
 
 .search-form__label-text {
@@ -153,26 +154,16 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   block-size: 19px;
   inline-size: 19px;
+  border: 1px solid #fff;
 }
 
-.search-form__pseudo-checkbox::before {
-  content: '';
-  inline-size: 19px;
-  block-size: 19px;
-  border: 1px solid white;
-  background-color: transparent;
-}
-
-.search-form__checkbox:checked ~ .search-form__pseudo-checkbox::after {
-  content: '';
-  inline-size: 15px;
-  block-size: 15px;
-  background-color: #fff;
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  background-image: url(../images/Rectangle\ 26.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .button {
