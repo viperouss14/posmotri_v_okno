@@ -104,10 +104,9 @@ ol {
 }
 
 .search-form__label-text {
-  font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal; /*? зачем задавать класс для текста, который мы прячем*/
+  line-height: normal;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -123,8 +122,8 @@ ol {
 .search-form__textfield {
   min-inline-size: 225px;
   block-size: 27px;
-  color: rgba(255 255 255 / 0.7);
-  font-family: 'Fira Sans Condensed';
+  color: inherit;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -133,6 +132,10 @@ ol {
   border: none;
   border-block-start: 1px solid #fff;
   border-block-end: 1px solid #fff;
+}
+
+.search-form__label-text .search-form__textfield {
+  color: rgba(255 255 255 / 0.7);
 }
 
 .search-form__textfield:active {
@@ -172,7 +175,7 @@ ol {
   background-color: transparent;
   color: #fff;
   text-align: center;
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -213,7 +216,7 @@ ol {
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -290,7 +293,7 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
