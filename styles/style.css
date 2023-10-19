@@ -12,13 +12,13 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -42,20 +42,20 @@ ol {
 
 .visually-hidden {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
 
 .content {
-  inline-size: 1140px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 30px;
+  inline-size: 1140px;
 }
 
 .result {
@@ -88,24 +88,24 @@ ol {
 }
 
 .search-form__fieldset-title {
+  margin-block-end: 5px;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
-  margin-block-end: 5px;
 }
 
 .search-form__label {
   display: flex;
+  align-items: center;
   gap: 5px;
   width: fit-content;
   cursor: pointer;
-  align-items: center;
 }
 
 .search-form__label-text {
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   line-height: normal;
 }
 
@@ -120,18 +120,18 @@ ol {
 }
 
 .search-form__textfield {
-  min-inline-size: 225px;
-  block-size: 27px;
-  color: inherit;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  background-color: transparent;
   border: none;
   border-block-start: 1px solid #fff;
   border-block-end: 1px solid #fff;
+  color: inherit;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  background-color: transparent;
+  min-inline-size: 225px;
+  block-size: 27px;
 }
 
 .search-form__label-text .search-form__textfield {
@@ -169,19 +169,39 @@ ol {
   background-size: contain;
 }
 
-.button {
-  cursor: pointer;
-  border: 1px solid #fff;
+/* Вариант с checkbox без использования картинки - наставник забраковал)))
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
   background-color: transparent;
+  block-size: 19px;
+  inline-size: 19px;
+}
+
+.search-form__checkbox:checked ~ .search-form__pseudo-checkbox::after {
+  content: '';
+  background-color: #fff;
+  inline-size: 15px;
+  block-size: 15px;
+}
+*/
+
+.button {
+  align-self: flex-end;
+  border: 1px solid #fff;
   color: #fff;
-  text-align: center;
   font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
   font-size: 18px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
   block-size: 34px;
-  align-self: flex-end;
 }
 
 .button:active {
@@ -217,9 +237,9 @@ ol {
 
 .title {
   font-family: Oswald, sans-serif;
+  font-weight: 700;
   font-size: 75px;
   font-style: normal;
-  font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
 }
@@ -232,8 +252,8 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  block-size: 300px;
   overflow: auto;
+  block-size: 300px;
 }
 
 .content__list::-webkit-scrollbar {
@@ -245,8 +265,8 @@ ol {
 }
 
 .content__list::-webkit-scrollbar-thumb {
-  background: #000;
   border-radius: 20px;
+  background: #000;
 }
 
 .content__list-item:not(:last-child) {
@@ -256,8 +276,8 @@ ol {
 .content__card-link {
   display: block;
   margin: 2px;
-  text-decoration: none;
   color: #fff;
+  text-decoration: none;
 }
 
 .content__card-link:active {
@@ -276,8 +296,8 @@ ol {
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
-  gap: 6px;
   flex-grow: 1;
+  gap: 6px;
 }
 
 .content__list-item:hover {
@@ -293,29 +313,29 @@ ol {
 }
 
 .content__video-card-title {
+  overflow: hidden;
   font-family: Oswald, sans-serif;
+  font-weight: 700;
   font-size: 30px;
   font-style: normal;
-  font-weight: 700;
   line-height: 100%; /* 30px */
   text-transform: uppercase;
-  white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: 16.2px; /* 90% */
 }
 
 .content__video-card-thumbnail {
-  block-size: 103px;
-  inline-size: 194px;
   object-fit: cover;
   object-position: center;
+  block-size: 103px;
+  inline-size: 194px;
 }
 
 .more-button {
