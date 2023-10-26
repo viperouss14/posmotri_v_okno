@@ -157,9 +157,9 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
+  border: 1px solid #fff;
   block-size: 19px;
   inline-size: 19px;
-  border: 1px solid #fff;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox {
@@ -169,8 +169,8 @@ ol {
   background-size: contain;
 }
 
-/* Вариант с checkbox без использования картинки - наставник забраковал)))
-
+/* Вариант с checkbox без использования картинки*/
+/*
 .search-form__pseudo-checkbox {
   display: flex;
   justify-content: center;
@@ -181,8 +181,9 @@ ol {
   inline-size: 19px;
 }
 
-.search-form__checkbox:checked ~ .search-form__pseudo-checkbox::after {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: '';
+  display: block;
   background-color: #fff;
   inline-size: 15px;
   block-size: 15px;
@@ -201,7 +202,7 @@ ol {
   text-align: center;
   background-color: transparent;
   cursor: pointer;
-  block-size: 34px;
+  min-block-size: 34px;
 }
 
 .button:active {
@@ -252,6 +253,7 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow: auto;
   block-size: 300px;
 }
@@ -296,12 +298,12 @@ ol {
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  gap: 6px;
+  /* gap: 6px; */
 }
 
 .content__list-item:hover {
   text-decoration: underline;
+  text-underline-position: under;
 }
 
 .content__card-link:focus {
@@ -324,6 +326,10 @@ ol {
   white-space: nowrap;
 }
 
+.content__video-card-description-container .content__video-card-title {
+  padding-block-end: 6px;
+}
+
 .content__video-card-description {
   font-weight: 400;
   font-size: 18px;
@@ -340,4 +346,9 @@ ol {
 
 .more-button {
   inline-size: 100%;
+}
+
+.more-button:focus-visible {
+  margin: 3px;
+  inline-size: calc(100% - 6px);
 }
